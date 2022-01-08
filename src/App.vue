@@ -1,26 +1,65 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<main>
+  <Gallery class="gallery__container" @image-selected="showSelectedPicture" />
+  <View class="view__container" :image='this.selectedImage'/>
+</main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Gallery from '@/components/Gallery.vue'
+import View from '@/components/View.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Gallery,
+    View
+  },
+  data () {
+    return {
+        selectedImage: {}
+    }
+  },
+  methods: {
+    showSelectedPicture(image) {
+      return this.selectedImage = image;
+    }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  max-width: 1600px;
+  height: 100vh;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  max-width: 1600px;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+
+  .gallery__container, .view__container {
+    max-width: 50rem;
+    width:50%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
 }
 </style>
