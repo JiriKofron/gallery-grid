@@ -8,5 +8,6 @@
         {"id":6,"name":"Rev","src":"http://dummyimage.com/2253x1022.png/5fa2dd/ffffff"},
         {"id":7,"name":"Honorable","src":"http://dummyimage.com/1849x2317.png/5fa2dd/ffffff"},
         {"id":8,"name":"Dr","src":"http://dummyimage.com/2266x2110.png/ff4444/ffffff"},
-        {"id":9,"name":"Mrs","src":"http://dummyimage.com/2056x1039.png/dddddd/000000"}]
+        {"id":9,"name":"Mrs","src":"http://dummyimage.com/2056x1039.png/dddddd/000000"}
+    ]
 }

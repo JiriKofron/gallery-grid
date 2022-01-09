@@ -1,7 +1,7 @@
 <template>
 <main>
-  <Gallery class="gallery__container" @image-selected="showSelectedPicture" />
-  <View class="view__container" :image='this.selectedImage'/>
+  <Gallery class="gallery__container"/>
+  <View class="view__container"/>
 </main>
 </template>
 
@@ -17,13 +17,9 @@ export default {
   },
   data () {
     return {
-        selectedImage: {}
     }
   },
   methods: {
-    showSelectedPicture(image) {
-      return this.selectedImage = image;
-    }
   }
 }
 </script>

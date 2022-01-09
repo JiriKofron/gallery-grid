@@ -3,12 +3,14 @@
         <h2>Gallery</h2>
         <div class="gallery__wrapper">
             <div class="gallery__wrapper__card" v-for="image of pictureGal" v-bind:key="image.id">
-            <img class="gallery__wrapper__images" :src="image.src" @click="$emit('imageSelected', image)"/>
+            <img class="gallery__wrapper__images" :src="image.src" @click="selectImage(image)"/>
             </div>
         </div>
     </section>
 </template>
+<!--$emit('imageSelected', image)-->
 <script>
+import {mapMutations} from 'vuex'
 
 export default {
     name: 'Gallery',
@@ -18,6 +20,12 @@ export default {
         }
     },
     emits: ['imageSelected'],
+    methods: {
+        ...mapMutations(['setCurrentPicture']),
+        selectImage(image) {
+            this.setCurrentPicture(image)
+        }
+    },
     mounted() {
         this.pictureGal = this.$store.state.pictures.data
     }
